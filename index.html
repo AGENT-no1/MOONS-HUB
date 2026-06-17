@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOON Game Hub</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <h1><i class="fas fa-gamepad"></i> MOON HUB</h1>
+  <div class="search-container">
+    <input type="text" class="search" placeholder="Search games..." onkeyup="searchGame()">
+  </div>
+  <div class="filter-container">
+    <select class="filter" onchange="searchGame()">
+      <option value="all">All Categories</option>
+      <option value="favorites">Favorites</option>
+      <option value="adventure">Adventure</option>
+      <option value="action">Action</option>
+      <option value="roleplay">Roleplay</option>
+      <option value="survival">Survival</option>
+    </select>
+    <button class="clear-btn" onclick="clearFilters()">Reset</button>
+  </div>
+  <div class="toggle" onclick="toggleTheme()">
+    <i class="fas fa-moon"></i>
+    <span>Theme</span>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat">
+    <div class="stat-number" id="totalGames">14</div>
+    <div class="stat-label">Total Games</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number" id="visibleGames">14</div>
+    <div class="stat-label">Displayed</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number" id="publicServers">7</div>
+    <div class="stat-label">Public Servers</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number" id="privateServers">7</div>
+    <div class="stat-label">Private Servers</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number" id="favoritesCount">0</div>
+    <div class="stat-label">Favorites</div>
+  </div>
+</div>
+
+<!-- PUBLIC SERVERS -->
+<div class="section">
+<h2><i class="fas fa-globe"></i> PUBLIC SERVERS</h2>
+<div class="container">
+
+<div class="card" data-name="bloxfruit" data-category="adventure">
+<span class="favorite" onclick="fav(this)">☆</span>
+<div class="card-image">
+<img src="assets/images/BLOXFRUIT.jpg" alt="Blox Fruit">
+</div>
+<div class="card-info">
+<p>BLOX FRUIT</p>
+<p class="card-description">Epic adventure game with powerful fruits and battles</p>
+</div>
+<button onclick="play(this)">PLAY <i class="fas fa-play"></i></button>
+<a href="https://www.roblox.com/share?code=678f0f313c670d41a6dd7cd92c8fc67f&type=ExperienceDetails" hidden></a>
+</div>
+
+<div class="card" data-name="catalog avatar" data-category="roleplay">
+<span class="favorite" onclick="fav(this)">☆</span>
+<div class="card-image">
+<img src="assets/images/CATALOG AVATAR.jpg" alt="Catalog Avatar">
+</div>
+<div class="card-info">
+<p>CATALOG AVATAR</p>
+<p class="card-description">Customize your avatar with amazing catalog items</p>
+</div>
+<button onclick="play(this)">PLAY <i class="fas fa-play"></i></button>
+<a href="https://www.roblox.com/share?code=a4fe9bba65f02743ba146cad37f1466c&type=ExperienceDetails" hidden></a>
+</div>
+
+<div class="card" data-name="colony" data-category="survival">
+<span class="favorite" onclick="fav(this)">☆</span>
+<div class="card-image">
+<img src="assets/images/COLONY.jpg" alt="Colony">
+</div>
+<div class="card-info">
+<p>CATALOG AVATAR</p>
+<p class="card-description">Recruit random players and survive together</p>
+</div>
+<button onclick="play(this)">PLAY <i class="fas fa-play"></i></button>
+<a href="https://www.roblox.com/games/14888386963/Colony" hidden></a>
+</div>
+
+<div class="card" data-name="deadly delivery" data-category="action">
+<span class="favorite" onclick="fav(this)">☆</span>
+<div class="card-image">
+<img src="assets/images/DEADLY DELIVERY.jpg" alt="Deadly Delivery">
+</div>
+<div class="card-info">
+<p>DEADLY DELIVERY</p>
+<p class="card-description">Fast-paced delivery action with deadly challenges</p>
+</div>
+<button onclick="play(this)">PLAY <i class="fas fa-play"></i></button>
+<a href="https://www.roblox.com/share?code=7ee69b3360a4cb418292fe5d0f8a3788&type=ExperienceDetails" hidden></a>
+</div>
+
+<div class="card" data-name="disaster" data-category="survival">
+<span class="favorite" onclick="fav(this)">☆</span>
+<div class="card-image">
+<img src="assets/images/DISASTER.jpg" alt="Disaster">
+</div>
+<div class="card-info">
+<p>DISASTER</p>
+<p class="card-description">Survive various natural disasters and challenges</p>
+</div>
+<button onclick="play(this)">PLAY <i class="fas fa-play"></i></button>
+<a href="https://www.roblox.com/share?code=6246c4f20d311246b0ee896643d3473f&type=ExperienceDetails" hidden></a>
+</div>
+
+<div class="card" data-name="eat the world" data-category="adventure">
+<span class="favorite" onclick="fav(this)">☆</span>
+<div class="card-image">
+<img src="assets/images/EAT THE WORLD.jpg" alt="Eat The World">
+</div>
+<div class="card-info">
+<p>EAT THE WORLD</p>
+<p class="card-description">Consume everything in this unique adventure</p>
+</div>
+<button onclick="play(this)">PLAY <i class="fas fa-play"></i></button>
+<a href="https://www.roblox.com/share?code=5a34ea9e8856a8498ae1716aa7ae835e&type=ExperienceDetails" hidden></a>
+</div>
+
+<div class="card" data-name="hunty zombies" data-category="action">
+<span class="favorite" onclick="fav(this)">☆</span>
+<div class="card-image">
+<img src="assets/images/HUNTY ZOMBIES.jpg" alt="Hunty Zombies">
+</div>
+<div class="card-info">
+<p>HUNTY ZOMBIES</p>
+<p class="card-description">Zombie hunting action with intense gameplay</p>
+</div>
+<button onclick="play(this)">PLAY <i class="fas fa-play"></i></button>
+<a href="https://www.roblox.com/share?code=b3c29d718ca40842a1b1ee9abfd7d3fd&type=ExperienceDetails" hidden></a>
+</div>
+
+<div class="card" data-name="sailor piece" data-category="adventure">
+<span class="favorite" onclick="fav(this)">☆</span>
+<div class="card-image">
+<img src="assets/images/SAILOR PIECE.jpg" alt="Sailor Piece">
+</div>
+<div class="card-info">
+<p>SAILOR PIECE</p>
+<p class="card-description">Pirate adventure with sailing and exploration</p>
+</div>
+<button onclick="play(this)">PLAY <i class="fas fa-play"></i></button>
+<a href="https://www.roblox.com/share?code=252f5a1bfda2164983eac17980bb7908&type=ExperienceDetails" hidden></a>
+</div>
+
+<div class="card" data-name="survive the apocalypse" data-category="survival">
+<span class="favorite" onclick="fav(this)">☆</span>
+<div class="card-image">
+<img src="assets/images/SURVIVE THE APOCALYPSE.jpg" alt="Survive The Apocalypse">
+</div>
+<div class="card-info">
+<p>SURVIVE THE APOCALYPSE</p>
+<p class="card-description">Surviving with random players</p>
+</div>
+<button onclick="play(this)">PLAY <i class="fas fa-play"></i></button>
+<a href="https://www.roblox.com/games/90148635862803/Survive-the-Apocalypse" hidden></a>
+</div>
+
+
+</div>
+</div>
+
+<div class="filter-message hidden" id="filterMessage">No games match your search or filter.</div>
+
+<!-- PRIVATE SERVERS -->
+<div class="section">
+<h2><i class="fas fa-lock"></i> MOON'S SERVERS</h2>
+<div class="container">
+
+<div class="card" data-name="catalog avatar" data-category="roleplay">
+<span class="favorite" onclick="fav(this)">☆</span>
+<div class="card-image">
+<img src="assets/images/CATALOG AVATAR.jpg" alt="Catalog Avatar">
+</div>
+<div class="card-info">
+<p>CATALOG AVATAR</p>
+<p class="card-description">Private server for exclusive avatar customization</p>
+</div>
+<button onclick="play(this)">PLAY <i class="fas fa-play"></i></button>
+<a href="https://www.roblox.com/share?code=52d6d9fe98d0654383b271de91986c31&type=Server" hidden></a>
+</div>
+
+<div class="card" data-name="colony" data-category="survival">
+<span class="favorite" onclick="fav(this)">☆</span>
+<div class="card-image">
+<img src="assets/images/COLONY.jpg" alt="Colony">
+</div>
+<div class="card-info">
+<p>COLONY</p>
+<p class="card-description">Create your own teammates for better teamwork</p>
+</div>
+<button onclick="play(this)">PLAY <i class="fas fa-play"></i></button>
+<a href="https://www.roblox.com/share?code=a4925b1dfe443e4586089f620ac00084&type=Server" hidden></a>
+</div>
+
+<div class="card" data-name="deadly delivery" data-category="action">
+<span class="favorite" onclick="fav(this)">☆</span>
+<div class="card-image">
+<img src="assets/images/DEADLY DELIVERY.jpg" alt="Deadly Delivery">
+</div>
+<div class="card-info">
+<p>DEADLY DELIVERY</p>
+<p class="card-description">Private server for intense delivery challenges</p>
+</div>
+<button onclick="play(this)">PLAY <i class="fas fa-play"></i></button>
+<a href="https://www.roblox.com/share?code=66f7557e0516484683bb8db89f7902bb&type=Server" hidden></a>
+</div>
+
+<div class="card" data-name="eat the world" data-category="adventure">
+<span class="favorite" onclick="fav(this)">☆</span>
+<div class="card-image">
+<img src="assets/images/EAT THE WORLD.jpg" alt="Eat The World">
+</div>
+<div class="card-info">
+<p>EAT THE WORLD</p>
+<p class="card-description">Private server for unique consumption adventures</p>
+</div>
+<button onclick="play(this)">PLAY <i class="fas fa-play"></i></button>
+<a href="https://www.roblox.com/share?code=477bf4b95bb65b478372ee1b42338c68&type=Server" hidden></a>
+</div>
+
+<div class="card" data-name="hunty zombies" data-category="action">
+<span class="favorite" onclick="fav(this)">☆</span>
+<div class="card-image">
+<img src="assets/images/HUNTY ZOMBIES.jpg" alt="Hunty Zombies">
+</div>
+<div class="card-info">
+<p>HUNTY ZOMBIES</p>
+<p class="card-description">Private server for zombie hunting action</p>
+</div>
+<button onclick="play(this)">PLAY <i class="fas fa-play"></i></button>
+<a href="https://www.roblox.com/share?code=976b92e9c4fc7a4bafda4ea64e9ec6f7&type=Server" hidden></a>
+</div>
+
+<div class="card" data-name="sailor piece" data-category="adventure">
+<span class="favorite" onclick="fav(this)">☆</span>
+<div class="card-image">
+<img src="assets/images/SAILOR PIECE.jpg" alt="Sailor Piece">
+</div>
+<div class="card-info">
+<p>SAILOR PIECE</p>
+<p class="card-description">Private server for pirate adventures</p>
+</div>
+<button onclick="play(this)">PLAY <i class="fas fa-play"></i></button>
+<a href="https://www.roblox.com/share?code=d2d3e336b255a449afa6a96809f30668&type=Server" hidden></a>
+</div>
+
+<div class="card" data-name="survive the apocalypse" data-category="survival">
+<span class="favorite" onclick="fav(this)">☆</span>
+<div class="card-image">
+<img src="assets/images/SURVIVE THE APOCALYPSE.jpg" alt="Survive The Apocalypse">
+</div>
+<div class="card-info">
+<p>SURVIVE THE APOCALYPSE</p>
+<p class="card-description">Private server for surviving zombie with your friends</p>
+</div>
+<button onclick="play(this)">PLAY <i class="fas fa-play"></i></button>
+<a href="https://www.roblox.com/share?code=e3f7bdbe9d6abc4fb9c1b6c14502d969&type=Server" hidden></a>
+</div>
+
+</div>
+</div>
+
+<!-- Modal -->
+<div id="gameModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="modalTitle"></h2>
+      <span class="close" onclick="closeModal()">&times;</span>
+    </div>
+    <div class="modal-body">
+      <img id="modalImage" src="" alt="Game Image" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
+      <p id="modalDescription"></p>
+      <p id="modalCategory"></p>
+      <button id="modalPlayBtn">PLAY <i class="fas fa-play"></i></button>
+      <a href="" hidden></a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 MOON Game Hub. All rights reserved.</p>
+<h1>
+  <a href="#" onclick="alert('To make EASIER ACCESS METHOD')">About</a> |
+  <a href="#" onclick="alert('Contact us at jackyalenabo7@gmail.com')">Contact</a> |
+  <a href="#" onclick="alert('RESPECT PUBLIC servers')">Privacy</a>
+</h1>
+</footer>
+
+<script src="script.js"></script>
+    
