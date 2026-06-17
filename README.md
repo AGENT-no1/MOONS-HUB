@@ -1,2 +1,0 @@
-# MOONS-HUB
-GAMES
